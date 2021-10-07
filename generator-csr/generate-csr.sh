@@ -26,8 +26,14 @@ fi
 
 case $PARAM in
      check|Check|CHECK) 
-          echo "Checking CSR"
-          openssl req -in csr/$DOMAIN.csr -noout -text
+         if [ -d csr ] || [ -f csr/$DOMAIN.csr ] || [ -f csr/$DOMAIN.key ]
+         then
+            echo "Checking CSR"
+            openssl req -in csr/$DOMAIN.csr -noout -text
+	  else
+            echo " File not Found"
+	    exit 1
+         fi
      ;;
      create|Create|CREATE)
           if [ -d csr ] || [ -f csr/$DOMAIN.csr ] || [ -f csr/$DOMAIN.key ]

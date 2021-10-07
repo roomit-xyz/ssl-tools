@@ -3,7 +3,7 @@
 # @luneareth
 
 
-DOMAIN="1rstwap.com";
+DOMAIN="roomit.tech";
 
 PARAM=$1
 

@@ -26,17 +26,17 @@ fi
 
 case $PARAM in
      check|Check|CHECK) 
-         if [ -d csr ] || [ -f csr/$DOMAIN.csr ] || [ -f csr/$DOMAIN.key ]
+         if [ -d csr ] && [ -f csr/$DOMAIN.csr ] && [ -f csr/$DOMAIN.key ] 2> /dev/null
          then
             echo "Checking CSR"
             openssl req -in csr/$DOMAIN.csr -noout -text
 	  else
-            echo " File not Found"
+            echo "Directory or File SSL not Found"
 	    exit 1
          fi
      ;;
      create|Create|CREATE)
-          if [ -d csr ] || [ -f csr/$DOMAIN.csr ] || [ -f csr/$DOMAIN.key ]
+          if [ -d csr ] && [ -f csr/$DOMAIN.csr ] && [ -f csr/$DOMAIN.key ] 2> /dev/null
           then
              echo "Directory CSR  and File CSR Already Generated Before"
              read -p "Are You Sure For Delete this Directory and Certificate? [Y/n]" hapus

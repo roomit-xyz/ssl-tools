@@ -1,0 +1,9 @@
+#!/bin/bash
+#Matrix Element Integration 
+
+
+TOKEN=""
+CHAT_ROOM=""
+HOSTNAME_MATRIX=""
+BASE="/opt/crontab"
+

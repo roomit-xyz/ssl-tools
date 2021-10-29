@@ -37,3 +37,16 @@ Check CSR
 ```
 bash generate-csr.sh check
 ```
+
+
+
+## OPNSENSE OPENVPN SSL USER CERTIFICATE CHECKER
+Hot To Use?
+
+1. Download Config opnsense *.xml
+2. Put into directory BACKUP/*.xml
+3. Running Script
+
+```
+bash main.sh
+```
